@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>FitNutri Profile Page</title>
+        <link rel="stylesheet" href="charlotte-profile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Berkshire+Swash&family=Madimi+One&display=swap">
+        <script src="fdd-script.js" type="text/javascript"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="author" content="Charlotte Goh"/>
+        <meta name="description" content="Profile page for the logged in user"/>
+        <meta name="keywords" content="Profile, personal, settings"/>
+    </head>
+    <body>
+        <!-- NAVIGATION BAR -->
+        <header>
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="charlotte-ui-elements/APUlogo.png">
+                    <a href="#"><span>APU FitNutri</span></a>
+                </div>
+                <div class="nav-bar">
+                    <nav>
+                        <ul class="nav-menu">
+                            <li>
+                                <button>Fitness & Exercise <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="iris-workoutvideos.html">Workout Videos</a></li>
+                                    <li><a href="iris-workouttips.html">Workout Tips</a></li>
+                                    <li><a href="iris-eventclasses.html">Events & Classes</a></li>
+                                    <li><a href="iris-facilitiesandamenities.html">Facilities & Amenities</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>Nutrition <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="#">Diets Categories</a></li>
+                                    <li><a href="#">Healthy Eating</a></li>
+                                    <li><a href="#">Portion Control</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>Community & Support <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="charlotte-discussionboard.html">Discussion Boards</a></li>
+                                    <li><a href="charlotte-newsupdates.html">News & Updates</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">More</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="nav-user">
+                    <div class="user-icon">
+                        <a href="charlotte-profile.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                        <div class="user-dropdown">
+                            <a href="#">Log In</a>
+                            <a href="#">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- NAVIGATION BAR: END -->
+
+        <div class="page-container font-color-change">
+            <div class="profile-container">
+                <div class="profile-header"></div> <!-- BLACK BACKGROUND COLOUR BY DEFAULT UNTIL USER INSERTS PICTURE -->
+                <img class="profile-picture" src="charlotte-ui-elements/profile-icon.svg" alt="default empty profile icon">
+                <div class="profile-bio" >
+                    <div class="bio-item-1">
+                        <div>
+                            <h3>Amanda Lim Qin</h3> <!-- EXAMPLE NAME FOR DEMONSTRATION PURPOSES -->
+                            <h4>@TP070044</h4> <!-- EXAMPLE USERNAME FOR DEMONSTRATION PURPOSES -->
+                        </div>
+                        <div>
+                            <i class="fa fa-link" aria-hidden="true"></i><a id="social-media-link">Your social media</a> <!-- DISPLAYS LINK TO USER'S 1 SOCIAL MEDIA ACCOUNT -->
+                            <i class="fa fa-birthday-cake" aria-hidden="true"></i><span id="birthday-span">Your birthday</span> <!-- DISPLAYS BIRTH DATE -->
+                        </div>
+                        
+                    </div>
+                    <div class="bio-item-2">
+                        <span>Joined on: 16 November 2023</span> <!-- EXAMPLE JOIN DATE FOR DEMONSTRATION PURPOSES -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bottom-container font-color-change">
+                <h1>Account Settings</h1>
+                <section>
+                    <form action="#" method="post">
+                        <table class="settings">
+                            <tr>
+                                <td><label for="profile-pic">Profile Picture:</label></td>
+                                <td><input type="file" id="profile-pic" name="profile-pic" placeholder="Enter URL"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="header-pic">Header Picture:</label></td>
+                                <td><input type="file" id="header-pic" name="header-pic" placeholder="Enter URL"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="birthday">Birthday:</label></td>
+                                <td><input type="date" id="birthday-input" name="birthday"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="accent-color">Profile Accent Color:</label></td>
+                                <td><input type="color" id="accent-color" name="accent-color"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="font-color">Font Color:</label></td>
+                                <td><input type="color" id="font-color" name="font-color"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="social-media">Social Media:</label></td>
+                                <td><input type="url" id="social-media-input" name="social-media" placeholder="Enter URL"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align: center;"><input value="Save Changes" class="submit-btn"></td>
+                                <!-- UNRESPONSIVE BUTTON DISPLAYED FOR DEMONSTRATION PURPOSES, AS THERE IS NO SERVER TO STORE THE CHANGES -->
+                            </tr>
+                        </table>
+                    </form>
+                </section>        
+            </div>
+
+            <script>
+            /* FUNCTION: Customise profile */
+            document.addEventListener('DOMContentLoaded', function () {
+                const profilePicInput = document.getElementById('profile-pic');
+                const headerPicInput = document.getElementById('header-pic');
+                const profilePicImg = document.querySelector('.profile-picture');
+                const profileHeader = document.querySelector('.profile-header');
+
+                profilePicInput.addEventListener('change', function (event) {
+                    const file = event.target.files[0];
+                    const reader = new FileReader();
+
+                    reader.onload = function () {
+                        profilePicImg.src = reader.result;
+                    };
+
+                    if (file) {
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                headerPicInput.addEventListener('change', function (event) {
+                    const file = event.target.files[0];
+                    const reader = new FileReader();
+
+                    reader.onload = function () {
+                        profileHeader.style.backgroundImage = `url('${reader.result}')`;
+                    };
+
+                    if (file) {
+                        reader.readAsDataURL(file);
+                    }
+                });
+            });
+
+            function changeAccentColor(color) {
+                const profilePic = document.querySelector('.profile-picture')
+                const profileBio = document.querySelector('.profile-bio');
+                const badgesSection = document.querySelector('.badges-section');
+                const sideContainer = document.querySelector('.side-container');
+                const bottomContainer = document.querySelector('.bottom-container');
+                const infoContainer = document.querySelector('.privateinfo-section');
+                
+                profilePic.style.backgroundColor = color;
+                profileBio.style.backgroundColor = color;
+                badgesSection.style.backgroundColor = color;
+                sideContainer.style.backgroundColor = color;
+                bottomContainer.style.backgroundColor = color;
+                infoContainer.style.backgroundColor = color;
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const accentColorInput = document.getElementById('accent-color');
+
+                accentColorInput.addEventListener('input', function (event) {
+                    const color = event.target.value;
+                    changeAccentColor(color);
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const fontColorInput = document.getElementById('font-color');
+
+                fontColorInput.addEventListener('input', function (event) {
+                    const color = event.target.value;
+                    changeFontColor(color);
+                });
+
+                function changeFontColor(color) {
+                    const elementsToChangeColor = document.querySelectorAll('.font-color-change');
+                    elementsToChangeColor.forEach(element => {
+                        element.style.color = color;
+                    });
+                }
+            });
+
+            function displaySocialMedia() {
+            const socialMediaLink = document.getElementById('social-media-link');
+            const socialMediaInput = document.getElementById('social-media-input');
+
+            socialMediaInput.addEventListener('input', function (event) {
+                const url = event.target.value;
+                const username = extractUsername(url);
+                socialMediaLink.href = url;
+                socialMediaLink.textContent = username;
+                });
+            }
+
+            function extractUsername(url) {
+                // Split the URL by '/' and get the third part
+                const parts = url.split('/');
+                const username = parts[3];
+                return username;
+            }
+
+            displaySocialMedia();
+
+            function displayBirthday() {
+                const birthdayInput = document.getElementById('birthday-input');
+                const birthdaySpan = document.getElementById('birthday-span');
+
+                birthdayInput.addEventListener('input', function (event) {
+                    const birthday = event.target.value;
+                    birthdaySpan.textContent = birthday;
+                });
+            }
+
+            displayBirthday();
+            </script>
+            
+            <aside class="side-container">
+                <div class="badges-section">
+                    <h2>Your Badges</h2>
+                    <table>
+                        <tr> <!-- EXAMPLES BADGES THAT USER CAN EARN AS A MEMBER -->
+                            <td><img src="charlotte-ui-elements/badge_member.png" alt="Badge 1"></td>
+                            <td>Official FitNutri Member</td>
+                        </tr>
+                        <tr>
+                            <td><img src="charlotte-ui-elements/badge_colorrun.png" alt="Badge 2"></td>
+                            <td>Happy and Healthy Runner</td>
+                        </tr>
+                        <tr>
+                            <td><img src="charlotte-ui-elements/badge_loyal.png" alt="Badge 3"></td>
+                            <td>Appreciated Loyal User</td>
+                        </tr>
+                    </table>
+                    <p style="font-style: italic; font-size: small;">Earn more by participating any health or wellness related activties. <a href="iris-eventclasses.html#events">See here.</a></p>
+                </div>
+            </aside>
+
+            <div class="privateinfo-section">
+                <h1>Your Private Information</h1>
+                <table class="privateinfo-table">
+                    <tr> <!-- DEMONSTRATION OF HOW USER'S INFORMATION FROM REGISTERING WILL BE STORED -->
+                        <td><label for="email">Email:</label></td> <!-- NON-FUNCTIONAL EDIT BUTTON FOR DEMONSTRATION AS WELL -->
+                        <td>*********@mail.apu.edu.com <button class="edit-btn"><i class="fa fa-pencil-square" aria-hidden="true"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td>********* <button class="edit-btn"><i class="fa fa-pencil-square" aria-hidden="true"></i></button></td>
+                    </tr>
+                </table>
+            </div>
+
+            
+        </div>
+
+        
+    </body>
+</html>

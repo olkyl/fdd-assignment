@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>FitNutri Create a Post</title>
+        <link rel="stylesheet" href="charlotte-createpost.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Berkshire+Swash&family=Madimi+One&display=swap">
+        <script src="fdd-script.js" type="text/javascript"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="author" content="Charlotte Goh"/>
+        <meta name="description" content="Webpage for members to create a post for the discussion board"/>
+        <meta name="keywords" content="Create, post, forum, topics, health, wellness"/>
+    </head>
+    <body class="noscroll">
+        <!-- NAVIGATION BAR -->
+        <header>
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="charlotte-ui-elements/APUlogo.png">
+                    <a href="#"><span>APU FitNutri</span></a>
+                </div>
+                <div class="nav-bar">
+                    <nav>
+                        <ul class="nav-menu">
+                            <li>
+                                <button>Fitness & Exercise <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="iris-workoutvideos.html">Workout Videos</a></li>
+                                    <li><a href="iris-workouttips.html">Workout Tips</a></li>
+                                    <li><a href="iris-eventclasses.html">Events & Classes</a></li>
+                                    <li><a href="iris-facilitiesandamenities.html">Facilities & Amenities</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>Nutrition <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="#">Diets Categories</a></li>
+                                    <li><a href="#">Healthy Eating</a></li>
+                                    <li><a href="#">Portion Control</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>Community & Support <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="charlotte-discussionboard.html">Discussion Boards</a></li>
+                                    <li><a href="charlotte-newsupdates.html">News & Updates</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">More</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="nav-user">
+                    <div class="user-icon">
+                        <a href="charlotte-profile.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                        <div class="user-dropdown">
+                            <a href="#">Log In</a>
+                            <a href="#">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- NAVIGATION BAR: END -->
+
+        <!--CREATE A NEW POST-->
+        <div class="panel-container">
+            <div class="left-panel"> <!-- DISABLED ALL INTERACTIVE FEATURES IN LEFT PANEL -->
+                <div class="leftpanel-btn-container">
+                    <button class="add-btn" disabled>Add a New Discussion</button>
+                </div>
+                <div class="search-container">
+                    <input class="searchbar" type="text" size="30" maxlength="30" placeholder="Search keywords..." disabled>
+                    <button class="search-btn">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="leftpanel-filter-container">
+                    <div class="filter-heading">
+                        <h2><i class="fa fa-filter" aria-hidden="true"></i> Filter by Category</h2>
+                    </div>
+                    <div class="filter-category-checkbox">
+                        <label><input type="checkbox" class="filter-checkbox" value="all" disabled> All</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="general" disabled> General</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="nutrition" disabled> Nutrition</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="mental-health" disabled> Mental Health</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="addiction" disabled> Addiction</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="fitness" disabled> Fitness</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="lifestyle" disabled> Lifestyle</label>
+                    </div>
+                    
+                    <div class="filter-heading">
+                        <h2><i class="fa fa-filter" aria-hidden="true"></i> Filter by Popularity</h2>
+                    </div>
+                    <div class="filter-popularity-checkbox">
+                        <label><input type="radio" name="popularity" class="filter-checkbox" value="None" disabled> None</label>
+                        <label><input type="radio" name="popularity" class="filter-checkbox" value="likes" disabled> Most Likes</label>
+                        <label><input type="radio" name="popularity" class="filter-checkbox" value="replies" disabled> Most Replies</label>
+                    </div>
+                </div>
+            </div> <!-- LEFT PANEL: END-->
+
+            <div class="main-panel-noscroll">
+                <form id="new-post" method="post" action="charlotte-discussionboard.html"> <!-- CREATE A POST -->
+                    <div class="create-dsc-post">
+                        <div class="cdp-top">
+                            <h1 class="cdp-main-heading">Start Your Own Discussion</h1>
+                            <div class="cdp-btn-container">
+                                <button class="cdp-btn" type="submit">Post</button>
+                                <button class="cdp-btn" type="reset" onclick="redirectToPage('charlotte-discussionboard.html')"> <!-- RETURN TO DISCUSSION BOARD -->
+                                    <i class="fa fa-times" aria-hidden="true"></i> Cancel
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cdp-item">
+                            <h3 class="cdp-heading">Title:</h3> <!-- ALLOW USER TO ENTER TITLE FOR THEIR POST -->
+                            <input type="text" class="cdp-typing" id="post-title"maxlength="50" placeholder="Enter a title (Max. 50 characters)" required>
+                        </div>
+                        <div class="cdp-item">
+                            <div>
+                                <h3 class="cdp-heading">Select a Category:</h3> <!-- ALLOW USER TO SELECT CONTENT CATEGORY -->
+                                <div class="category-dropdown">
+                                    <select name="category-list" class="select-category-dropdown" required>
+                                        <option value="general" selected="selected">General</option>
+                                        <option value="physical-health">Nutrition</option>
+                                        <option value="mental-health">Mental Health</option>
+                                        <option value="addiction-recovery">Addiction</option>
+                                        <option value="fitness">Fitness</option>
+                                        <option value="lifestyle">Lifestyle</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cdp-item">
+                            <h3 class="cdp-heading">Your Content:</h3> <!-- ALLOW USER TO WRITE POST CONTENT -->
+                            <textarea class="cdp-typing" rows="10" minlength="10" maxlength="500" id="post-content" placeholder="Write your content here (10-500 characters)" required></textarea>
+                        </div>
+                        <div class="cdp-item">
+                            <h3 class="cdp-heading">Additional Media:</h3>
+                            <input id="post-media" type="file" class="cdp-input" accept="image/*" onchange="previewImage()"> <!-- SHOWS IMAGE IF ATTACHED -->
+                            <div id="image-preview" class="image-preview"></div>
+                            <button id="remove-media" style="display:none;" onclick="removeImage()">Remove Image</button> <!-- REMOVES ATTACHED IMAGE -->
+                        </div>
+                        <div class="cdp-item"> <!-- DISCLAIMER SHOWN AS A FOOTER -->
+                            <p class="cdp-disclaimer">DISCLAIMER: You are solely responsible for the content of your comments. We are
+                                not responsible for any harm or damage caused by your comments. By clicking "Post", you acknowledge
+                                that you have read and understood these guidelines and agree to abide by them.</p>
+                        </div>
+                    </div>
+                </form> <!-- CREATE A POST: END -->
+            </div>
+        </div>
+    </body>
+</html>

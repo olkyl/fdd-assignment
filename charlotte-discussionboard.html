@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>FitNutri Discussion Board</title>
+        <link rel="stylesheet" href="charlotte-discussionboard.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Berkshire+Swash&family=Madimi+One&display=swap">
+        <script src="fdd-script.js" type="text/javascript"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="author" content="Charlotte Goh"/>
+        <meta name="description" content="Forum for website members to have open discussions"/>
+        <meta name="keywords" content="Discussion, board, forum, topics, health, wellness"/>
+    </head>
+    <body class="noscroll">
+        <!-- NAVIGATION BAR -->
+        <header>
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="charlotte-ui-elements/APUlogo.png">
+                    <a href="#"><span>APU FitNutri</span></a>
+                </div>
+                <div class="nav-bar">
+                    <nav>
+                        <ul class="nav-menu">
+                            <li>
+                                <button>Fitness & Exercise <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="iris-workoutvideos.html">Workout Videos</a></li>
+                                    <li><a href="iris-workouttips.html">Workout Tips</a></li>
+                                    <li><a href="iris-eventclasses.html">Events & Classes</a></li>
+                                    <li><a href="iris-facilitiesandamenities.html">Facilities & Amenities</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>Nutrition <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="#">Diets Categories</a></li>
+                                    <li><a href="#">Healthy Eating</a></li>
+                                    <li><a href="#">Portion Control</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>Community & Support <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="charlotte-discussionboard.html">Discussion Boards</a></li>
+                                    <li><a href="charlotte-newsupdates.html">News & Updates</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">More</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="nav-user">
+                    <div class="user-icon">
+                        <a href="charlotte-profile.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                        <div class="user-dropdown">
+                            <a href="#">Log In</a>
+                            <a href="#">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- NAVIGATION BAR: END -->
+
+        <div class="panel-container">
+            <!-- MAIN CONTENT -->
+            <div class="left-panel">
+                <div class="leftpanel-btn-container"> <!-- BUTTON TO CREATE A POST -->
+                    <button class="add-btn" onclick="redirectToPage('charlotte-createpost.html')">Add a New Discussion</button>
+                </div>
+                <div class="search-container"> <!-- SEARCHBAR (uses filterPosts()) -->
+                    <input class="searchbar" type="text" size="30" maxlength="30" placeholder="Search keywords...">
+                    <button class="search-btn">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="leftpanel-filter-container">
+                    <div class="filter-heading">
+                        <h2><i class="fa fa-filter" aria-hidden="true"></i>Filter by Category</h2>
+                    </div>
+                    <div class="filter-category-checkbox"> <!-- CHECKBOX FILTER (uses filterPosts()) -->
+                        <label><input type="checkbox" class="filter-checkbox" value="all" checked> All</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="general"> General</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="nutrition"> Nutrition</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="mental-health"> Mental Health</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="addiction"> Addiction</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="fitness"> Fitness</label>
+                        <label><input type="checkbox" class="filter-checkbox" value="lifestyle"> Lifestyle</label>
+                    </div>
+                    
+                    <div class="filter-heading">
+                        <h2><i class="fa fa-filter" aria-hidden="true"></i>Filter by Popularity</h2>
+                    </div>
+                    <div class="filter-popularity-checkbox"> <!-- RADIO FILTER (uses reorderPosts()) -->
+                        <label><input type="radio" name="popularity" class="filter-checkbox" value="None" checked> None</label>
+                        <label><input type="radio" name="popularity" class="filter-checkbox" value="likes"> Most Likes</label>
+                        <label><input type="radio" name="popularity" class="filter-checkbox" value="replies"> Most Replies</label>
+                    </div>
+                </div>
+                <div class="sorry">
+                    <p><span style="font-weight: 600;">Apologies</span>: Our reply button is <span style="font-weight: 600; font-style: italic;">temporarily unavailable</span>. We're working to fix it ASAP.</p>
+                </div>
+            </div>
+            <div class="main-panel posts"> <!-- DISCUSSION BOARD CONTAINER -->
+                <div class="post general"> <!-- POST 1 -->
+                    <div class="dsc-post" id="post1">
+                        <div class="post-preview">
+                            <h2>Title: Balancing Work, School, and Social Life</h2>
+                            <p>I've been struggling to find a balance between school, work, and my social life, and I'm wondering if anyone 
+                                else can relate. How do you all manage to juggle your various commitments and still make time for things you enjoy? 
+                                I could use some advice!</p>
+                        </div>
+                        <div class="post-details">
+                            <span class="detail">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>@TP074402
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>16:14
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                <span class="likeCount" id="likeCount-post">13</span>
+                            </span>
+                            <div class="detail" class="expand-link" onclick="toggleReplies('post1')">
+                                <i class="fa fa-comment"></i><a href="#" class="replies">0</a>
+                            </div>
+                            <div class="btn-container">
+                                <button class="like-btn" onclick="toggleLike('post1')"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like</button>
+                                <button class="reply-to-post"><i class="fa fa-comment"></i> Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- POST 1: END -->
+
+                <div class="post nutrition"> <!-- POST 2 -->
+                    <div class="dsc-post" id="post2">
+                        <div class="post-preview">
+                            <h2>Title: My Journey to Better Nutrition</h2>
+                            <p>I used to rely heavily on fast food and sugary snacks to get through long study sessions, but I realized that it was 
+                                taking a toll on my energy levels and overall health. Lately, I've been experimenting with meal prepping and I'm loving it! 
+                                Here's what I did earlier today.</p>
+                            <img class="mealprep" src="charlotte-ui-elements/mealprep.jpg" alt="picture of student's meal prep"> <!-- INSERTED IMAGE -->
+                        </div>
+                        <div class="post-details">
+                            <span class="detail">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>@TP073616
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>15:50
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                <span class="likeCount" id="likeCount-post">4</span>
+                            </span>
+                            <div class="detail" class="expand-link" onclick="toggleReplies('post2')">
+                                <i class="fa fa-comment"></i><a href="#" class="replies">0</a>
+                            </div>
+                            <div class="btn-container">
+                                <button class="like-btn" onclick="toggleLike('post2')"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like</button>
+                                <button class="reply-to-post" disabled><i class="fa fa-comment"></i> Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- POST 2: END -->
+
+                <div class="post mental-health"> <!-- POST 3 -->
+                    <div class="dsc-post" id="post3">
+                        <div class="post-preview">
+                            <h2>Title: Coping with Stress and Anxiety in University</h2>
+                            <p>Personally, I've been feeling overwhelmed lately with coursework and extracurricular activities, and it's 
+                                been taking a toll on my mental well-being.<br><img style="width: 280px;" src="charlotte-ui-elements/sad.gif" alt="sad blob GIF"><br>I've been trying to incorporate self-care practices into my 
+                                routine, like taking short breaks to meditate or go for a walk, and talking to friends or a counselor when I need support.</p>
+                        </div>
+                        <div class="post-details">
+                            <span class="detail">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>@TP069530
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>14:22
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                <span class="likeCount" id="likeCount-post">10000</span>
+                            </span>
+                            <div class="detail" class="expand-link" onclick="toggleReplies('post3')">
+                                <i class="fa fa-comment"></i><a href="#" class="replies">0</a>
+                            </div>
+                            <div class="btn-container">
+                                <button class="like-btn" onclick="toggleLike('post3')"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like</button>
+                                <button class="reply-to-post" disabled><i class="fa fa-comment"></i> Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- POST 3: END-->
+
+                <div class="post addiction"> <!-- POST 4 -->
+                    <div class="dsc-post" id="post4">
+                        <div class="post-preview">
+                            <h2>Title: Dealing with Substance Use in College</h2>
+                            <p>Hey everyone, I wanted to open up about something that's been on my mind lately: substance use in college. 
+                                <br><br>I've noticed that partying and drinking are a big part of the social scene here, and it's easy to feel pressured to participate. 
+                                Personally, I've struggled with alcohol use in the past, and I'm trying to be more mindful of my choices and boundaries. 
+                                It's not always easy, especially when everyone around me seems to be drinking heavily. 
+                                <br><br>Does anyone else have experience with substance use or tips for staying safe and making healthy choices?</p>
+                        </div>
+                        <div class="post-details">
+                            <span class="detail">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>@TP070759
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>11:45
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                <span class="likeCount" id="likeCount-post">0</span>
+                            </span>
+                            <div class="detail" class="expand-link" onclick="toggleReplies('post4')">
+                                <i class="fa fa-comment"></i><a href="#" class="replies">2</a>
+                            </div>
+                            <div class="btn-container">
+                                <button class="like-btn" onclick="toggleLike('post4')"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like</button>
+                                <button class="reply-to-post" disabled><i class="fa fa-comment"></i> Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reply-container replies-post4"> <!-- REPLY 1 -->
+                        <div>
+                            <div class="reply-content">
+                                <p>Hello from the FitNutri Admin team! Thank you for opening up about your experience and past hardships. We recommend these helpful resources in your recovery:</p>
+                                <iframe src="charlotte-ui-elements/https://smartrecovery.org/" frameborder="0" scrolling="no"></iframe> <!-- INSERTED IFRAME -->
+                            </div>
+                            <div class="reply-details">
+                                <span class="detail">
+                                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>@FitNutri Admin
+                                </span>
+                                <span class="detail">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>11:46
+                                </span>
+                            </div>
+                        </div>
+                    </div> <!-- REPLY 1: END -->
+                    <div class="reply-container replies-post4"> <!-- REPLY 2 -->
+                        <div>
+                            <div class="reply-content">
+                                <p>I'm proud of you babygirl :D</p>
+                            </div>
+                            <div class="reply-details">
+                                <span class="detail">
+                                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>@TP069539
+                                </span>
+                                <span class="detail">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>13:08
+                                </span>
+                            </div>
+                        </div>
+                    </div> <!-- REPLY 2: END -->
+                </div> <!-- POST 4: END -->
+
+                <div class="post fitness"> <!-- POST 5 -->
+                    <div class="dsc-post" id="post5">
+                        <div class="post-preview">
+                            <h2>Title: Finding Motivation to Stay Active</h2>
+                            <p>Hey guys, I've been struggling to stay motivated with my fitness routine lately and could use some advice. 
+                                Between classes, studying, and other commitments, it's hard to find the time and energy to exercise regularly. 
+                                <br><br>I used to love going to the gym, but lately, I've been feeling burnt out and unmotivated. 
+                                I know how important it is to stay active for my physical and mental health, but I just can't seem to get back into it. 
+                                How do you all stay motivated to work out? Any tips or tricks for getting back on track?</p>
+                        </div>
+                        <div class="post-details">
+                            <span class="detail">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>@TP070046
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>11:04
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                <span class="likeCount" id="likeCount-post">69</span>
+                            </span>
+                            <div class="detail" class="expand-link" onclick="toggleReplies('post5')">
+                                <i class="fa fa-comment"></i><a href="#" class="replies">1</a>
+                            </div>
+                            <div class="btn-container">
+                                <button class="like-btn" onclick="toggleLike('post5')"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like</button>
+                                <button class="reply-to-post" disabled><i class="fa fa-comment"></i> Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reply-container replies-post5"> <!-- REPLY 1 -->
+                        <div class="reply-content">
+                            <p>You know what gets me pumped up to hit the gym? 
+                                Imagining myself crushing those weights is my own therapy. 
+                                Show those weights who's boss!!!</p>
+                        </div>
+                        <div class="reply-details">
+                            <span class="detail">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>@TP070134
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>16:09
+                            </span>
+                        </div>
+                    </div> <!-- REPLY 1: END -->
+                </div> <!-- POST 5: END -->
+
+                <div class="post lifestyle"> <!-- POST 6 -->
+                    <div class="dsc-post" id="post6">
+                        <div class="post-preview">
+                            <h2>Title: Embrace the Slow Life</h2>
+                            <p>In a world of hustle, take a moment to slow down. From mindful mornings with yoga to homemade meals savored 
+                                with loved ones, embrace simplicity. Disconnect from screens, connect with nature. 
+                                Let's savor the beauty of life, one moment at a time. #SlowLiving #Mindfulness</p>
+                                <img style="width: 350px; height: auto;" src="charlotte-ui-elements/peace-and-love.gif" alt="peace and love GIF">
+                        </div>
+                        <div class="post-details">
+                            <span class="detail">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>@TP068661
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>09:50
+                            </span>
+                            <span class="detail">
+                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                <span class="likeCount" id="likeCount-post">1</span>
+                            </span>
+                            <div class="detail" class="expand-link" onclick="toggleReplies('post6')">
+                                <i class="fa fa-comment"></i><a href="#" class="replies">0</a>
+                            </div>
+                            <div class="btn-container">
+                                <button class="like-btn" onclick="toggleLike('post6')"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like</button>
+                                <button class="reply-to-post" disabled><i class="fa fa-comment"></i> Reply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- POST 6: END -->
+            </div> <!-- DISCUSSION BOARD CONTAINER: END -->
+        </div> <!-- MAIN CONTENT: END -->
+
+        <script>
+            /* FUNCTION: Filter posts (based on ticked checkboxes) */
+            const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+            const posts = document.querySelectorAll('.post');
+
+            filterCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterPosts);
+            });
+
+            function filterPosts() {
+            const selectedCategories = Array.from(filterCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+
+            if (selectedCategories.includes('all')) {
+                showAllPosts();
+            } else {
+                posts.forEach(post => {
+                const postCategories = Array.from(post.classList).filter(className => className !== 'post');
+                const shouldShowPost = postCategories.some(category => selectedCategories.includes(category));
+                post.style.display = shouldShowPost ? 'block' : 'none';
+                });
+            }
+            }
+
+            function showAllPosts() {
+            posts.forEach(post => {
+                post.style.display = 'block';
+            });
+            }
+
+            showAllPosts(); /* Show all posts initially */
+
+            /* FUNCTION: Filter posts (based on selected radio options) */
+            function reorderPosts() {
+                var postsContainer = document.querySelector('.main-panel.posts');
+                var posts = Array.from(postsContainer.querySelectorAll('.post'));
+                var popularityFilter = document.querySelector('input[name="popularity"]:checked').value;
+
+                /* Check if "None" filter is selected */
+                if (popularityFilter === 'None') {
+                    /* Default: Sort posts based on time in descending order */
+                    posts.sort((a, b) => {
+                        var timeA = getTime(a.querySelector('.detail .fa-clock-o').nextSibling.textContent.trim());
+                        var timeB = getTime(b.querySelector('.detail .fa-clock-o').nextSibling.textContent.trim());
+                        return timeB - timeA;
+                    });
+                } else {
+                    /* "None" filter is NOT selected, rearrange posts... */
+                    if (popularityFilter === 'likes') {
+                        posts.sort((a, b) => { /* ...based on number of likes */
+                            var likesA = parseInt(a.querySelector('.likeCount').innerText);
+                            var likesB = parseInt(b.querySelector('.likeCount').innerText);
+                            return likesB - likesA;
+                        });
+                    } else if (popularityFilter === 'replies') {
+                        posts.sort((a, b) => { /* ...based on number of replies */
+                            var repliesA = parseInt(a.querySelector('.replies').innerText);
+                            var repliesB = parseInt(b.querySelector('.replies').innerText);
+                            return repliesB - repliesA;
+                        });
+                    }
+                }
+
+                /* Reorder and display the posts */
+                posts.forEach(post => {
+                    postsContainer.appendChild(post);
+                });
+            }
+
+            /* Function to get time in minutes from string */
+            function getTime(timeString) {
+                var parts = timeString.split(':');
+                return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+            }
+
+            /* Add event listener to the radio buttons */
+            var popularityRadios = document.querySelectorAll('.filter-popularity-checkbox input[type="radio"]');
+            popularityRadios.forEach(function(radio) {
+                radio.addEventListener('change', reorderPosts);
+            });
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>FitNutri News and Updates</title>
+        <link rel="stylesheet" href="charlotte-newsupdates.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Berkshire+Swash&family=Madimi+One&display=swap">
+        <script src="fdd-script.js" type="text/javascript"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="author" content="Charlotte Goh"/>
+        <meta name="description" content="Webpage to communicate campus happenings related to health and wellness"/>
+        <meta name="keywords" content="News, activites, community, health, wellness"/>
+    </head>
+    <body class="scrollable">
+        <!-- NAVIGATION BAR -->
+        <header>
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="charlotte-ui-elements/APUlogo.png">
+                    <a href="#"><span>APU FitNutri</span></a>
+                </div>
+                <div class="nav-bar">
+                    <nav>
+                        <ul class="nav-menu">
+                            <li>
+                                <button>Fitness & Exercise <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="iris-workoutvideos.html">Workout Videos</a></li>
+                                    <li><a href="iris-workouttips.html">Workout Tips</a></li>
+                                    <li><a href="iris-eventclasses.html">Events & Classes</a></li>
+                                    <li><a href="iris-facilitiesandamenities.html">Facilities & Amenities</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>Nutrition <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="#">Diets Categories</a></li>
+                                    <li><a href="#">Healthy Eating</a></li>
+                                    <li><a href="#">Portion Control</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button>Community & Support <i class="fa fa-caret-down"></i></button>
+                                <ul class="nav-submenu">
+                                    <li><a href="charlotte-discussionboard.html">Discussion Boards</a></li>
+                                    <li><a href="charlotte-newsupdates.html">News & Updates</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#">More</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="nav-user">
+                    <div class="user-icon">
+                        <a href="charlotte-profile.html"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                        <div class="user-dropdown">
+                            <a href="#">Log In</a>
+                            <a href="#">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- NAVIGATION BAR: END -->
+
+        <!-- POP UP WINDOW -->
+        <div class="popup-overlay"></div>
+        <div class="popup-box">
+            <div class="popup-content">
+                <img alt="cute warning icon" class="popup-icon" src="charlotte-ui-elements/fdd-alert.png">
+                <p class="alert-heading">Stay Safe</p>
+                <p class="alert-desc">COVID-19 cases are on the rise. Wear a mask!</p>
+                <button class="popup-close-btn">Got it, thanks!</button> <!-- CLOSES POP UP -->
+            </div> 
+        </div>
+        <!-- POP UP WINDOW END -->
+
+        
+        <div class="page-head"> <!-- INDICATES CLEARLY WHAT SECTION THE USER IS IN -->
+            <h1>Community & Support</h1>
+            <p>Campus News and Updates</p>
+            <img src="charlotte-ui-elements/newsupdates_graphics.svg" alt="graphics for page head"> <!-- SVG GRAPHICS PAIRED WITH GRADIENT BACKGROUND COLOUR -->
+        </div>
+
+
+        <div class="page-body"> <!-- MAIN CONTENT -->
+
+            <section class="bulletin-board"> <!-- SECTION 1 -->
+                <div class="bulletin-header">
+                    <table class="bulletin-table">
+                        <tr>
+                            <td class="bulletin-title">
+                                <h2>Bulletin Board</h2>
+                                <p>Our bulletin brings you the latest on upcoming on-campus wellness activities.</p>
+                            </td>
+                            <td><img src="charlotte-ui-elements/bulletin_friends.png" alt="graphic of close friends"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="bulletin-content">
+
+                    <div class="slideshow-container"> <!-- SLIDESHOW WHERE UPCOMING CAMPUS ACTIVITIES ARE DISPLAYED -->
+                        <div class="slides fade">
+                            <img src="charlotte-ui-elements/bulletin1.png" alt="first bulletin slide" style="max-height: 80vh; width: auto;">
+                        </div>
+                        <div class="slides fade">
+                            <img src="charlotte-ui-elements/bulletin2.png" alt="second bulletin slide" style="max-height: 80vh; width: auto;">
+                        </div>
+                        <div class="slides fade">
+                            <img src="charlotte-ui-elements/bulletin3.png" alt="third bulletin slide" style="max-height: 80vh; width: auto;">
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+
+                </div>
+            </section> <!-- SECTION 1: END -->
+
+            
+            <section class="news-section"> <!-- SECTION 2 -->
+                <div class="news-container">
+
+                    <div class="news-header">
+                        <h2>Health Headlines</h2>
+                        <p>Discover articles showcasing positive wellness initiatives within our vibrant community.</p>
+                        <p style="font-style: italic; font-size: smaller;">(Note: Updated occasionally)</p>
+                    </div>
+
+                    <div class="cards-container" onwheel="scrollHorizontally(event)"> <!-- NEWS ARTICLES ARE DISPLAYED IN A HORIZONTAL ORIENTATION WITH SVG BACKGROUND IMAGE -->
+                        <article> <!-- CARD 1 -->
+                            <div class="card"> 
+                                <div class="card-picholder">
+                                    <span class="card-span">03 April 2024</span>
+                                    <img style="width: inherit;" src="charlotte-ui-elements/article1.jpg" alt="preview image of article 1">
+                                </div>
+                                <div class="card-info">
+                                    <p class="card-info-title">For Our Faculty Members: Spine & Mind Harmony</p>
+                                    <p class="excerpt">The School of Psychology at APU organized a complimentary Health Talk & Spine Check, prioritizing staff well-being and promoting the connection between physical and mental health. Attendees left empowered and enlightened.</p>
+                                    <button class="card-button" onclick="redirectToURL('https://www.apu.edu.my/media/news/2992')">Read More</button>
+                                </div>
+                            </div>
+                        </article> <!-- CARD 1: END -->
+                        <article> <!-- CARD 2 -->
+                            <div class="card"> 
+                                <div class="card-picholder">
+                                    <span class="card-span">26 March 2024</span>
+                                    <img style="width: inherit;" src="charlotte-ui-elements/article2.jpg" alt="preview image of article 2">
+                                </div>
+                                <div class="card-info">
+                                    <p class="card-info-title">APU Mental Health Week Campaign</p>
+                                    <p class="excerpt">In honor of World Mental Health Day, the School of Psychology and the APU Psychology Society successfully carried out a collaborative event aimed to raise awareness and promote mental well-being.</p>
+                                    <button class="card-button" onclick="redirectToURL('https://new.apu.edu.my/apu-mental-health-week-campaign-paves-the-way-for-organising-special-needs-children-camp')">Read More</button>
+                                </div>
+                            </div>
+                        </article> <!-- CARD 2: END -->
+                        <article> <!-- CARD 3 -->
+                            <div class="card"> 
+                                <div class="card-picholder">
+                                    <span class="card-span">03 March 2024</span>
+                                    <img style="width: inherit;" src="charlotte-ui-elements/article3.jpeg" alt="preview image of article 3">
+                                </div>
+                                <div class="card-info">
+                                    <p class="card-info-title">Embracing Mental Wellness</p>
+                                    <p class="excerpt">The Integrated Sustainability and Urban Creativity Centre (ISUC) at Asia Pacific University of Technology & Innovation spearheaded an empowering event, fostering open dialogue and empowerment surrounding mental health issues.</p>
+                                    <button class="card-button" onclick="redirectToURL('https://www.apu.edu.my/media/news/2990')">Read More</button>
+                                </div>
+                            </div>
+                        </article> <!-- CARD 3: END -->
+                    </div>
+
+                </div>
+            </section> <!-- SECTION 2: END -->
+
+            <section class="student-section"> <!-- SECTION 3 -->
+
+                <img class="spotlight" alt="Spotlight graphic" src="charlotte-ui-elements/spotlight.svg">
+                <div class="student-header">
+                    <div class="student-header-title">
+                        <h2>Student Spotlight</h2> 
+                        <p>Student Spotlight highlights inspiring stories, tips, and contributions from our students.</p>
+                    </div>
+                    <div class="student-header-more">
+                        <button class="student-btn">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>  
+                        </button>
+                        <p class="show-info"> <!-- A TOOLTIP TO LET USERS KNOW WHERE TO SHARE THEIR STORIES -->
+                            Share your own tips or experiences to us on Instagram <a href="https://www.instagram.com/apu_wellness/?hl=en" target="_blank">@apu_wellness</a>!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="student-container">
+                    <div class="student-picture">
+                        <img src="charlotte-ui-elements/student-spotlight-profile.jpg" alt="picture of the featured student">
+                    </div>
+                    <div class="student-content">
+                        <p>Hey everyone! I'm Rama. Juggling lectures, labs, and late-night study sessions can be demanding, but I've discovered that healthy eating has been instrumental in sustaining my energy and focus.</p>
+                        <p style="font-weight: bold;">Tips for Healthy Eating on Campus:</p>
+                        <ol>
+                            <li>Start Your Day on a High Note:</li>
+                            <p>Energize your mornings with a <span style="text-decoration: underline;">nutritious breakfast</span> to kickstart your day. Opt for options like oatmeal with fresh fruit, whole-grain toast with peanut butter, or yogurt parfaits from the campus cafeteria.</p>
+                            <li>Snack Smartly Throughout the Day:</li>
+                            <p>Combat the mid-day slump by <span style="text-decoration: underline;">keeping nutritious snacks at hand</span>. Pack portable options like trail mix, protein bars, or sliced veggies with hummus to stave off hunger between classes.</p>
+                            <li>Stay Hydrated Throughout the Day:</li>
+                            <p>Hydration is essential for staying focused and alert. Keep a refillable water bottle with you and <span style="text-decoration: underline;">sip on water regularly throughout the day</span>, especially during busy study sessions.</p>
+                        </ol>
+                    </div>
+                </div>
+            </section> <!-- SECTION 3: END -->
+
+        </div> <!-- MAIN CONTENT: END -->
+    </body>
+
+    <script>
+        /* FUNCTION: Show pop up message */
+        document.addEventListener("DOMContentLoaded", function() {
+            /* Show popup on first load/window refresh */
+            document.querySelector('.popup-overlay').style.display = 'block';
+            document.querySelector('.popup-box').style.display = 'block';
+            
+            /* Add event listener to close button */
+            document.querySelector('.popup-close-btn').addEventListener('click', function() {
+                /* Hide popup when close button is clicked */
+                document.querySelector('.popup-overlay').style.display = 'none';
+                document.querySelector('.popup-box').style.display = 'none';
+            });
+        });
+
+        /* FUNCTION: Interactive slideshow */
+        document.addEventListener('DOMContentLoaded', function() {
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            /* Add event listeners to next/previous buttons */
+            document.querySelector('.prev').addEventListener('click', () => modifySlide(-1));
+            document.querySelector('.next').addEventListener('click', () => modifySlide(1));
+
+            function modifySlide(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function showSlides(n) {
+                let slides = document.getElementsByClassName("slides");
+                if (n > slides.length) slideIndex = 1;
+                if (n < 1) slideIndex = slides.length;
+
+                Array.from(slides).forEach(slide => slide.style.display = "none");
+
+                slides[slideIndex - 1].style.display = "block";
+            }
+        });
+    </script>
+</html>
