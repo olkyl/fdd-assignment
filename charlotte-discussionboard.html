@@ -350,29 +350,29 @@
             const posts = document.querySelectorAll('.post');
 
             filterCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', filterPosts);
+                checkbox.addEventListener('change', filterPosts);
             });
 
             function filterPosts() {
-            const selectedCategories = Array.from(filterCheckboxes)
-                .filter(checkbox => checkbox.checked)
-                .map(checkbox => checkbox.value);
+                const selectedCategories = Array.from(filterCheckboxes)
+                    .filter(checkbox => checkbox.checked)
+                    .map(checkbox => checkbox.value);
 
-            if (selectedCategories.includes('all')) {
-                showAllPosts();
-            } else {
-                posts.forEach(post => {
-                const postCategories = Array.from(post.classList).filter(className => className !== 'post');
-                const shouldShowPost = postCategories.some(category => selectedCategories.includes(category));
-                post.style.display = shouldShowPost ? 'block' : 'none';
-                });
-            }
+                if (selectedCategories.includes('all')) {
+                    showAllPosts();
+                } else {
+                    posts.forEach(post => {
+                        const postCategories = Array.from(post.classList).filter(className => className !== 'post');
+                        const shouldShowPost = postCategories.some(category => selectedCategories.includes(category));
+                        post.style.display = shouldShowPost ? 'block' : 'none';
+                    });
+                }
             }
 
             function showAllPosts() {
-            posts.forEach(post => {
-                post.style.display = 'block';
-            });
+                posts.forEach(post => {
+                    post.style.display = 'block';
+                });
             }
 
             showAllPosts(); /* Show all posts initially */
